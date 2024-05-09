@@ -15,10 +15,6 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
@@ -55,7 +51,7 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <nav sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -77,7 +73,6 @@ export default function DrawerAppBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              //TEXTCOLOR
               <Button key={item} sx={{ color: "#FFF" }}>
                 {item}
               </Button>
@@ -85,7 +80,7 @@ export default function DrawerAppBar(props: Props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
+      <Box component="nav" sx={{ display: "flex" }}> {/* Fix here */}
         <Drawer
           container={container}
           variant="temporary"
@@ -104,10 +99,10 @@ export default function DrawerAppBar(props: Props) {
         >
           {drawer}
         </Drawer>
-      </nav>
+      </Box>
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
       </Box>
-    </nav>
+    </Box>
   );
 }
