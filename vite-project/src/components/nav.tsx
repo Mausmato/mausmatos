@@ -81,7 +81,9 @@ export default function DrawerAppBar(props: Props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <Box component="nav" sx={{ display: "flex" }}> {/* Fix here */}
+      <Box component="nav" sx={{ display: "flex" }}>
+        {" "}
+        {/* Fix here */}
         <Drawer
           container={container}
           variant="temporary"
