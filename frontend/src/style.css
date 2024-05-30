@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/path/to/fonts/ProximaNova-Regular.woff2') format('woff2'),
+         url('/path/to/fonts/ProximaNova-Regular.woff') format('woff'),
+         url('/path/to/fonts/ProximaNova-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('/path/to/fonts/ProximaNova-Bold.woff2') format('woff2'),
+         url('/path/to/fonts/ProximaNova-Bold.woff') format('woff'),
+         url('/path/to/fonts/ProximaNova-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'proxima-nova', sans-serif;
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  background-color: #ffffff; /* Fallback color */
+}
+
+.nnn{ 
+     width: 70px;
+    height: auto;
+
+}
