@@ -1,7 +1,7 @@
 // pages/index.tsx
 import Title from "../../components/title";
 import WordRotate from "../../components/rotate";
-import ShinyButton from "../../components/button";
+import ShinyButton from "../../components/button"; // Import ShinyButton component
 import "../../style.css";
 
 const Home: React.FC = () => {
@@ -31,8 +31,15 @@ const Home: React.FC = () => {
                 />
               </span>
             </div>
-            <div className="">
-              <ShinyButton />
+            <div className="flex">
+              {" "}
+              {/* Wrap buttons in a flex container */}
+              <div className="pr-3">
+                {" "}
+                {/* Add margin-right for spacing */}
+                <ShinyButton /> {/* First shiny button */}
+              </div>
+              <ShinyButton /> {/* Second shiny button */}
             </div>
           </div>
         </div>
