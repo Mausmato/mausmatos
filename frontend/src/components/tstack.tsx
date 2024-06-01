@@ -1,60 +1,88 @@
-import { cn } from "../../lib/utils";
+"use client";
 
-export default function OrbitingCircles({
-  className,
-  children,
-  reverse,
-  duration = 20,
-  delay = 10,
-  radius = 50,
-  path = true,
-}: {
-  className?: string;
-  children?: React.ReactNode;
-  reverse?: boolean;
-  duration?: number;
-  delay?: number;
-  radius?: number;
-  path?: boolean;
-}) {
+import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from "react";
+import {
+  Cloud,
+  fetchSimpleIcons,
+  ICloud,
+  renderSimpleIcon,
+  SimpleIcon,
+} from "react-icon-cloud";
+
+export const cloudProps: Omit<ICloud, "children"> = {
+  containerProps: {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+      paddingLeft:"30px"
+    },
+  },
+  options: {
+    reverse: true,
+    depth: 1,
+    wheelZoom: false,
+    imageScale: 2,
+    activeCursor: "default",
+    tooltip: "native",
+    initial: [0.1, -0.1],
+    clickToFront: 500,
+    tooltipDelay: 0,
+    outlineColour: "#0000",
+    maxSpeed: 0.04,
+    minSpeed: 0.02,
+    // dragControl: false,
+  },
+};
+
+export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
+  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
+  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
+  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+
+  return renderSimpleIcon({
+    icon,
+    bgHex,
+    fallbackHex,
+    minContrastRatio,
+    size: 42,
+    aProps: {
+      href: undefined,
+      target: undefined,
+      rel: undefined,
+      onClick: (e: any) => e.preventDefault(),
+    },
+  });
+};
+
+export type DynamicCloudProps = {
+  iconSlugs: string[];
+};
+
+type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
+
+export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
+  const [data, setData] = useState<IconData | null>(null);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+  }, [iconSlugs]);
+
+  const renderedIcons = useMemo(() => {
+    if (!data) return null;
+
+    return Object.values(data.simpleIcons).map((icon) =>
+      renderCustomIcon(icon, theme || "light")
+    );
+  }, [data, theme]);
+
   return (
-    <>
-      {path && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          className="pointer-events-none absolute inset-0 h-full w-full"
-        >
-          <circle
-            className="stroke-black/10 stroke-1 dark:stroke-white/10"
-            cx="50%"
-            cy="50%"
-            r={radius}
-            fill="none"
-            strokeDasharray={"4 4"}
-          />
-        </svg>
-      )}
-
-      <div
-        style={
-          {
-            "--duration": duration,
-            "--radius": `${radius}px`,
-            "--delay": `${delay}s`,
-          } as React.CSSProperties
-        }
-        className={cn(
-          "absolute flex h-full w-full transform-gpu items-center justify-center",
-          {
-            "animate-orbit-reverse": reverse,
-            "animate-orbit": !reverse,
-          },
-          className
-        )}
-      >
-        {children}
-      </div>
-    </>
+    // @ts-ignore
+    <Cloud {...cloudProps}>
+      <>{renderedIcons}</>
+    </Cloud>
   );
 }
