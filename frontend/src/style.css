@@ -62,3 +62,9 @@ body {
 .animate-orbit-reverse {
   animation: orbit-reverse var(--duration)s linear infinite;
 }
+
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

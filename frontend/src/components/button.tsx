@@ -30,17 +30,15 @@ const ShinyButton = ({ text = "shiny-button" }) => {
       {...animationProps}
       // Add className for styling
       className="relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-[box-shadow] duration-300 ease-in-out hover:shadow "
-      // Set button color to purple
-      style={{ backgroundColor: "purple", border: "2px solid black" }}
+      // Set button gradient background and border color
+      style={{
+        background: "linear-gradient(90deg, #a855f7, #7c3aed)",
+        border: "2px solid #A899B8",
+      }}
     >
       <span
         // Style text color to white
         className="relative block h-full w-full text-sm uppercase tracking-wide text-white"
-        style={{
-          // Apply gradient mask for text
-          maskImage:
-            "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",
-        }}
       >
         {text}
       </span>

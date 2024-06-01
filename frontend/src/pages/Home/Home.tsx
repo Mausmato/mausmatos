@@ -23,6 +23,7 @@ const Home: React.FC = () => {
     "visualstudiocode",
     "figma",
   ];
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-56 px-32">
       <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -49,9 +50,9 @@ const Home: React.FC = () => {
             </div>
             <div className="flex">
               <div className="pr-3">
-                <ShinyButton />
+                <ShinyButton text="resume" />
               </div>
-              <ShinyButton />
+              <ShinyButton text="github" />
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { cn } from "../../lib/utils";
 import { Variants, motion } from "framer-motion";
-import "../style.css"
+import "../style.css";
 
 interface Title {
   words: string;
@@ -33,11 +33,18 @@ export default function Title({
       animate="visible"
       className={cn(
         "text-3xl font-extrabold tracking-normal sm:text-4xl xl:text-5xl/none", // Updated to a larger text size
-        className,
+        className
       )}
     >
       {_words.map((word, i) => (
-        <motion.span key={word} variants={variants} custom={i}>
+        <motion.span
+          key={word}
+          variants={variants}
+          custom={i}
+          className={
+            word === "Matthew" || word === "Singer" ? "gradient-text" : ""
+          }
+        >
           {word}{" "}
         </motion.span>
       ))}
