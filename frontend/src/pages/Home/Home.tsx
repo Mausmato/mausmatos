@@ -6,7 +6,7 @@ import IconCloud from "../../components/tstack";
 import "../../style.css";
 
 const Home: React.FC = () => {
-  const titleWords = "Hi, I'm Matthew Singer 👋";
+  const titleWords = "Yo, I'm Matthew Singer 👋";
   const slugs = [
     "typescript",
     "javascript",
@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <div className="flex flex-col justify-center space-y-4">
           <div className="relative min-h-screen scroll-pb-64">
-            <div className="max-w-[729px] flex flex-col justify-center space-y-4 pt-24">
+            <div className="max-w-[730px] flex flex-col justify-center space-y-4 pt-24">
               <Title words={titleWords} />
             </div>
             <div className="md:text-xl pt-2">
@@ -48,15 +48,15 @@ const Home: React.FC = () => {
                 />
               </span>
             </div>
-            <div className="flex">
-              <div className="pr-3">
+            <div className="flex cursor-pointer">
+              <div className="pr-3 cursor-pointer">
                 <ShinyButton text="resume" />
               </div>
               <ShinyButton text="github" />
             </div>
           </div>
         </div>
-        <div className="!pl-24 -mt-4 items-center justify-center">
+        <div className="!pl-16 -mt-4 items-center justify-center">
           <IconCloud iconSlugs={slugs} />
         </div>
       </div>
