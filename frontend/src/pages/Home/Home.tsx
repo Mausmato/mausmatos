@@ -7,6 +7,7 @@ import "../../style.css";
 
 const Home: React.FC = () => {
   const titleWords = "Yo, I'm Matthew Singer 👋";
+  const projectTitle = "Projects";
   const slugs = [
     "typescript",
     "javascript",
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-56 px-32">
+    <section className="w-full pt-12 md:pt-24 lg:pt-56 px-32 pb-0">
       <div className="container px-4 md:px-6 grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <div className="flex flex-col justify-center space-y-4">
           <div className="relative min-h-screen scroll-pb-64">
@@ -38,6 +39,42 @@ const Home: React.FC = () => {
                 <WordRotate
                   className="font-bold"
                   words={[
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
+                    "Fine Tuning LLM Models.",
+                    "Web Development.",
+                    "UI/UX Design.",
+                    "AI (if its not better than me...)",
+                    "Responsive Designs.",
+                    "LAM Models.",
                     "Fine Tuning LLM Models.",
                     "Web Development.",
                     "UI/UX Design.",
@@ -59,6 +96,12 @@ const Home: React.FC = () => {
         <div className="!pl-16 -mt-4 items-center justify-center">
           <IconCloud iconSlugs={slugs} />
         </div>
+      </div>
+
+      <div className="mt-0">
+        {" "}
+        {/* Added margin-top for spacing */}
+        <Title className="text-center" words={projectTitle} />
       </div>
     </section>
   );

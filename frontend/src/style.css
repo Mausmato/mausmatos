@@ -29,7 +29,10 @@ body {
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
   background-color: #ffffff; /* Fallback color */
+
 }
+
+
 
 .nnn{ 
     width: 70px;

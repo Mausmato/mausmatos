@@ -4,7 +4,7 @@ import { cn } from "../../lib/utils";
 import { Variants, motion } from "framer-motion";
 import "../style.css";
 
-interface Title {
+interface TitleProps {
   words: string;
   className?: string;
   delay?: number;
@@ -23,7 +23,7 @@ export default function Title({
     }),
   },
   className,
-}: Title) {
+}: TitleProps) {
   const _words = words.split(" ");
 
   return (
@@ -42,7 +42,9 @@ export default function Title({
           variants={variants}
           custom={i}
           className={
-            word === "Matthew" || word === "Singer" ? "gradient-text" : ""
+            word === "Matthew" || word === "Singer" || word === "Projects"
+              ? "gradient-text"
+              : ""
           }
         >
           {word}{" "}
