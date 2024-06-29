@@ -2,6 +2,8 @@ import Title from "../../components/title";
 import WordRotate from "../../components/rotate";
 import ShinyButton from "../../components/button";
 import IconCloud from "../../components/tstack";
+import { Link } from "react-router-dom";
+
 
 import "../../style.css";
 
@@ -87,9 +89,13 @@ const Home: React.FC = () => {
             </div>
             <div className="flex cursor-pointer">
               <div className="pr-3 cursor-pointer">
-                <ShinyButton text="resume" />
+                <Link to="https://drive.google.com/file/d/1agag8DIWnpMSKTkWtMNwdDg_BtZ2OKio/view?usp=sharing">
+                  <ShinyButton text="resume" />
+                </Link>
               </div>
-              <ShinyButton text="github" />
+              <Link to="https://github.com/mausmato">
+                <ShinyButton text="github" />
+              </Link>
             </div>
           </div>
         </div>
