@@ -9,7 +9,6 @@ import "../../style.css";
 
 const Home: React.FC = () => {
   const titleWords = "Yo, I'm Matthew Singer 👋";
-  const projectTitle = "Projects";
   const slugs = [
     "typescript",
     "javascript",
