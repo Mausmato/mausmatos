@@ -104,11 +104,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-0">
-        {" "}
-        {/* Added margin-top for spacing */}
-        <Title className="text-center" words={projectTitle} />
-      </div>
     </section>
   );
 };
